@@ -145,6 +145,7 @@ public class ApiVideoLiveStream {
         #endif
 
         self.rtmpStream = RTMPStream(connection: self.rtmpConnection)
+        rtmpConnection.requireNetworkFramework = false
 
         // Force default resolution because HK default resolution is not supported (480x272)
         self.rtmpStream.videoSettings = VideoCodecSettings(videoSize: .init(width: 1_280, height: 720))
